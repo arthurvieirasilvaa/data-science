@@ -20,7 +20,7 @@ def calculate_euclidean_distance(p, q):
 
 
 def calculate_points_average(cluster):
-    """Função utilizada para calcular a média de todos os pontos de um determinado cluster."""
+    """Função utilizada para calcular a média de todos os pontos atribuídos a um cluster."""
 
     n = len(cluster[0]) # determinando o número de dimensões ds pontos
     c = [0.0] * n

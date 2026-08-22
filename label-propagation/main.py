@@ -19,6 +19,9 @@ def read_input_file(file_path):
             data = csv.reader(f)
 
             for row in data:
+                # Converte os valores da linha para int:
+                for i in range(len(row)):
+                    row[i] = int(row[i])
                 edges.append(row) # cria uma lista com os valores da linha e adiciona na lista de arestas
 
     except FileNotFoundError as error:
@@ -37,15 +40,35 @@ def create_graph(edges):
 def add_nodes_label(G, labels):
     for node in G.nodes:
         G.nodes[node]['label'] = random.choice(labels)
-        print(G.nodes[node]['label'])
+        print(f"Nó: {node}, Rótulo: {G.nodes[node]['label']}")
 
 
 def label_propagation(G=nx.Graph()):
     N = G.number_of_nodes()
-    labels = np.arange(K)
-    print(labels)
+    labels = np.arange(K) # cada nó recebe um rótulo aleatório de 0 até K-1
+    print(f"Rótulos: {labels}")
     add_nodes_label(G, labels)
-    
+
+    iteration = 0
+    changed = True
+
+    nodes_to_visit = np.array(G.nodes)
+    print(nodes_to_visit)
+    while iteration < MAX_ITERATIONS and changed:
+        changed = False
+
+        random.shuffle(nodes_to_visit) # aleatorizando a lista de nós visitados
+        print(f"Ordem que os nós serão visitados: {nodes_to_visit}")
+
+        for node in nodes_to_visit:
+            neighbors = list(G.neighbors(node))
+            print(f"Nó: {node}, Vizinhos: {neighbors}")
+
+            if neighbors:
+                neighbors_labels = []
+                for neighbor in neighbors:  
+                    neighbors_labels.append(G.nodes[neighbor]['label'].item())
+            
 
 
 def run():
@@ -59,8 +82,8 @@ def run():
     edges = read_input_file(file_path)
 
     G = create_graph(edges)
-    print(G.nodes)
-    print(G.edges)
+    print(f"Nós: {G.nodes}")
+    print(f"Arestas: {G.edges}")
 
     label_propagation(G)
 

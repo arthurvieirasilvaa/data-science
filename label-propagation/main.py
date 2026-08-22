@@ -42,6 +42,8 @@ def add_nodes_label(G, labels):
         G.nodes[node]['label'] = random.choice(labels)
         print(f"Nó: {node}, Rótulo: {G.nodes[node]['label']}")
 
+def calculate_mode_with_random_draw(neighbors_labels):
+    pass
 
 def label_propagation(G=nx.Graph()):
     N = G.number_of_nodes()
@@ -68,8 +70,8 @@ def label_propagation(G=nx.Graph()):
                 neighbors_labels = []
                 for neighbor in neighbors:  
                     neighbors_labels.append(G.nodes[neighbor]['label'].item())
-            
 
+                print(neighbors_labels)
 
 def run():
     # Verifica se os argumentos foram passados corretamente:

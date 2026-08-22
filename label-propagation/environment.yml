@@ -1,0 +1,8 @@
+name: venv
+channels:
+  - defaults
+dependencies:
+  - python
+  - numpy
+  - networkx
+  - matplotlib

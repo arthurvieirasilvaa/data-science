@@ -1,6 +1,13 @@
 import sys
 import csv
+import random
 import networkx as nx
+import numpy as np
+
+# Constantes utilizadas:
+K = 10
+MAX_ITERATIONS = 100
+
 
 def read_input_file(file_path):
     """Função utilizada para ler o arquivo csv de entrada e retornar as arestas obtidas."""
@@ -27,6 +34,20 @@ def create_graph(edges):
 
     return G
 
+def add_nodes_label(G, labels):
+    for node in G.nodes:
+        G.nodes[node]['label'] = random.choice(labels)
+        print(G.nodes[node]['label'])
+
+
+def label_propagation(G=nx.Graph()):
+    N = G.number_of_nodes()
+    labels = np.arange(K)
+    print(labels)
+    add_nodes_label(G, labels)
+    
+
+
 def run():
     # Verifica se os argumentos foram passados corretamente:
     if len(sys.argv) < 2:
@@ -40,6 +61,8 @@ def run():
     G = create_graph(edges)
     print(G.nodes)
     print(G.edges)
+
+    label_propagation(G)
 
 if __name__ == "__main__":
     run()

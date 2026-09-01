@@ -37,6 +37,27 @@ def get_survival_rate_by_age_group(df: pd.DataFrame):
     rates = {"criancas": children_rate, "jovens": young_people_rate, "adultos": adults_rate, "idosos": elderly_rate}
     return rates
 
+def get_relationship_between_fare_and_survival(df: pd.DataFrame):
+    """Função utilizada para obter a Relação entre Tarifa e Sobrevivência."""
+
+    # Agrupando por sobrevivência:
+    survived = df.groupby('Survived')
+    survivors = survived.get_group(1)
+    non_survivors = survived.get_group(0)
+
+    # Calculando o valor médio e a variação da tarifa do grupo de sobreviventes:
+    survivors_fare_mean = survivors['Fare'].mean()
+    survivors_fare_std = survivors['Fare'].std()
+
+    # Calculando o valor médio e a variação da tarifa do grupo de sobreviventes:
+    non_survivors_fare_mean = non_survivors['Fare'].mean()
+    non_survivors_fare_std = non_survivors['Fare'].std()
+
+    survivors_fare_stats = {"media": survivors_fare_mean, "desvio_padrao": survivors_fare_std}
+    non_survivors_fare_stats = {"media": non_survivors_fare_mean, "desvio_padrao": non_survivors_fare_std}
+
+    return survivors_fare_stats, non_survivors_fare_stats
+
 def run():
     """
         Funçao utilizada para obter a Distribuição de Idade por Gênero e Classe
@@ -59,7 +80,17 @@ def run():
     print("============= Taxa de Sobrevivência por Faixa Etária =============\n")
     for key, value in rates.items():
         print(f"{key}:")
-        print(f"\t{value}\n") 
+        print(f"\t{value}\n")
+
+    survivors_fare_stats, non_survivors_fare_stats = get_relationship_between_fare_and_survival(df)
+    print("============= Relação entre Tarifa e Sobrevivência =============\n")
+    print("Sobreviventes:")
+    print(f"\tMédia da Tarifa: {survivors_fare_stats['media']}")
+    print(f"\tDesvio padrão da Tarifa: {survivors_fare_stats['desvio_padrao']}\n")
+
+    print("Não Sobreviventes:")
+    print(f"\tMédia da Tarifa: {non_survivors_fare_stats['media']}")
+    print(f"\tDesvio padrão da Tarifa: {non_survivors_fare_stats['desvio_padrao']}")
 
 if __name__ == '__main__':
     run()

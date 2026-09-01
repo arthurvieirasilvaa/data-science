@@ -58,6 +58,60 @@ def get_relationship_between_fare_and_survival(df: pd.DataFrame):
 
     return survivors_fare_stats, non_survivors_fare_stats
 
+def display_results_graphical_view(df: pd.DataFrame, rates, survivors_fare_stats, non_survivors_fare_stats):
+    """Função utilizada para obter uma Visualização Gráfica dos Resultados."""
+
+    # Boxplot representando as estatísticas da Distribuição de Idade por Gênero
+    # e Classe Social:
+    df.boxplot(column='Age', by=['Sex', 'Pclass'], grid=False, figsize=(10, 8))
+
+    labels = ["Mulheres\n(Primeira Classe)", 
+              "Mulheres\n(Segunda Classe)", 
+              "Mulheres\n(Terceira Classe)",
+              "Homens\n(Primeira Classe)",
+              "Homens\n(Segunda Classe)",
+              "Homens\n(Terceira Classe)"]
+
+    plt.title("Distribuição de Idade por Gênero e Classe Social")
+    plt.suptitle("")
+    plt.xlabel("Gênero e Classe Social (Sex, Pclass)")
+    plt.ylabel("Idade")
+    plt.xticks(ticks=[1, 2, 3, 4, 5, 6], labels=labels)
+
+    plt.tight_layout()
+    plt.show()
+
+    # Gráfico de Barras representando a Taxa de Sobrevivência por Faixa Etária:
+    df_rates = pd.DataFrame(rates).T * 100
+    df_rates = df_rates.rename(columns={0: "Não Sobreviventes", 1: "Sobreviventes"})
+    df_rates.index = ["Crianças", "Jovens", "Adultos", "Idosos"]
+    df_rates.plot.bar(rot=0, color=["#e74c3c", "#2ecc71"], figsize=(8, 5))
+
+    plt.title("Taxa de Sobrevivência por Faixa Etária")
+    plt.xlabel("Faixa Etária")
+    plt.ylabel("Taxa de Sobrevicência")
+    plt.legend(title="Grupos")
+
+    plt.tight_layout()
+    plt.show()
+
+    # Gráfico de Barras com Barras de Erros representando a Relação entre "
+    # Tarifa e Sobrevivência:
+    plt.bar(x=["Sobreviventes", "Não Sobreviventes"], 
+            height=[survivors_fare_stats["media"], non_survivors_fare_stats["media"]],
+            yerr=[survivors_fare_stats["desvio_padrao"], non_survivors_fare_stats["desvio_padrao"]],
+            capsize=8,
+            color=["#2ecc71", "#e74c3c"],
+            ecolor="#000000",
+            width=0.5)
+    plt.title("Relação entre Tarifa e Sobrevivência")
+    plt.xlabel("Grupos")
+    plt.ylabel("Valor médio da tarifa")
+    plt.ylim(0, 140)
+    
+    plt.tight_layout()
+    plt.show()
+
 def run():
     """
         Funçao utilizada para obter a Distribuição de Idade por Gênero e Classe
@@ -91,6 +145,8 @@ def run():
     print("Não Sobreviventes:")
     print(f"\tMédia da Tarifa: {non_survivors_fare_stats['media']}")
     print(f"\tDesvio padrão da Tarifa: {non_survivors_fare_stats['desvio_padrao']}")
+
+    display_results_graphical_view(df, rates, survivors_fare_stats, non_survivors_fare_stats)
 
 if __name__ == '__main__':
     run()

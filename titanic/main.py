@@ -119,7 +119,7 @@ def run():
         Tarifa e Sobrevivência, e uma Visualização Gráfica dos Resultados.
     """
 
-    df =  pd.read_csv( 'titanic.csv' , sep= ',')
+    df =  pd.read_csv('titanic.csv' , sep= ',')
 
     age_stats = get_age_distribution_by_sex_and_pclass(df)
     print("============= Distribuição de Idade por Gênero e Classe Social =============\n")

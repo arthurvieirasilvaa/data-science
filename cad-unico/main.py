@@ -1,18 +1,22 @@
 import pandas as pd
 import glob
 
-def get_age_distribution_by_sex_and_race(df_cad: pd.DataFrame):
+def add_age_column(df_cad: pd.DataFrame):
+    df_cad_with_age = df_cad.copy()
 
     # Converte os valores da coluna 'DT_NASC_PESSOA' para um objeto Pandas
     # datetime:
-    df_cad['DT_NASC_PESSOA'] = pd.to_datetime(df_cad['DT_NASC_PESSOA'], 
-                                              format="%Y-%m-%d", 
-                                              errors="coerce")
+    df_cad_with_age['DT_NASC_PESSOA'] = pd.to_datetime(df_cad['DT_NASC_PESSOA'], 
+                                                format="%Y-%m-%d", 
+                                                errors="coerce")
     
-    df_cad_with_age = df_cad.copy()
-
     # Criando uma novo coluna 'IDADE' na cópia do DataFrame:
     df_cad_with_age['IDADE'] = 2018 - df_cad_with_age['DT_NASC_PESSOA'].dt.year
+
+    return df_cad_with_age
+
+def calculate_age_distribution_by_sex_and_race(df_cad: pd.DataFrame):
+    df_cad_with_age = add_age_column(df_cad)
     
     # Agrupando por sexo/gênero e cor/raça:
     df_grouped_by_sex_and_race = df_cad_with_age.groupby(['CO_SEXO_PESSOA', 'CO_RACA_COR_PESSOA'])
@@ -22,11 +26,55 @@ def get_age_distribution_by_sex_and_race(df_cad: pd.DataFrame):
     median_age_by_sex_and_race = df_grouped_by_sex_and_race['IDADE'].median()
     std_age_by_sex_and_race = df_grouped_by_sex_and_race['IDADE'].std()
     
-    stats = {"media": mean_age_by_sex_and_race, 
-             "mediana": median_age_by_sex_and_race, 
-             "desvio_padrao": std_age_by_sex_and_race
+    return {"media": mean_age_by_sex_and_race, 
+            "mediana": median_age_by_sex_and_race, 
+            "desvio_padrao": std_age_by_sex_and_race
              }
-    return stats
+
+def get_informal_and_formal_employment_rates(df_cad: pd.DataFrame):
+    df_cad_with_age = add_age_column(df_cad)
+
+    # Filtrando o DataFrame com os indivíduos em idade ativa (18 a 65 anos):
+    df_cad_filtered_ages = df_cad_with_age[(df_cad_with_age['IDADE'] >= 18) & 
+                                           (df_cad_with_age['IDADE'] <= 65)
+                                           ].copy()
+
+    # Convertendo os valores que serão utilizados:
+    df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] = df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'].astype(bool)
+    df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'], errors='coerce').fillna(0)
+
+    total_working_age_population = len(df_cad_filtered_ages)
+    if total_working_age_population == 0: 
+        print("O total de pessoas em idade ativa vale 0!")
+        return None
+
+    # Obtendo o total de trabalhadores informais e informais (com carteira 
+    # assinada):
+    total_informal_workers = len(df_cad_filtered_ages[df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] & 
+                                          (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] == 0)
+                                          ])
+    total_formal_workers = len(df_cad_filtered_ages[df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] & 
+                                              (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] > 0)
+                                              ])
+    total_workers = total_informal_workers + total_formal_workers    
+
+    # Calculando a taxa proporcional de trabalhadores informais e formais (com
+    # carteira assinada):
+    informal_workers_rate = (total_informal_workers / total_working_age_population) * 100.0
+    formal_workers_rate = (total_formal_workers / total_working_age_population) * 100.0
+
+    if total_workers == 0:
+        informal_occupied_workers_rate = 0.0
+        formal_occupied_workers_rate = 0.0
+    else:
+        informal_occupied_workers_rate = (total_informal_workers / total_workers) * 100.0
+        formal_occupied_workers_rate = (total_formal_workers / total_workers) * 100.0
+
+    return {"taxa_informal_pia": informal_workers_rate,
+            "taxa_formal_pia": formal_workers_rate,
+            "taxa_informal_ocupados": informal_occupied_workers_rate,
+            "taxa_formal_ocupados": formal_occupied_workers_rate
+            }
 
 def run():
     input_path = 'amostra.csv/*.csv'
@@ -72,7 +120,8 @@ def run():
     print("Mostrando a diferença entre o valor do trabalho remunerado e a média do trabalho remunerado por sexo:")
     print(df_cad_with_mean[['CO_SEXO_PESSOA', 'VL_REMUNER_EMPREGO_MEMB', 'MEDIA_RENDA_SEXO', 'DIFERENCA_RENDA_MEDIA']].head(10))
 
-    stats = get_age_distribution_by_sex_and_race(df_cad)
+    stats = calculate_age_distribution_by_sex_and_race(df_cad)
+    get_informal_and_formal_employment_rates(df_cad)
 
 if __name__ == '__main__':
     run()

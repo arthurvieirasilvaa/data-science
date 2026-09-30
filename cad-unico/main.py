@@ -1,6 +1,33 @@
 import pandas as pd
 import glob
 
+def get_age_distribution_by_sex_and_race(df_cad: pd.DataFrame):
+
+    # Converte os valores da coluna 'DT_NASC_PESSOA' para um objeto Pandas
+    # datetime:
+    df_cad['DT_NASC_PESSOA'] = pd.to_datetime(df_cad['DT_NASC_PESSOA'], 
+                                              format="%Y-%m-%d", 
+                                              errors="coerce")
+    
+    df_cad_with_age = df_cad.copy()
+
+    # Criando uma novo coluna 'IDADE' na cópia do DataFrame:
+    df_cad_with_age['IDADE'] = 2018 - df_cad_with_age['DT_NASC_PESSOA'].dt.year
+    
+    # Agrupando por sexo/gênero e cor/raça:
+    df_grouped_by_sex_and_race = df_cad_with_age.groupby(['CO_SEXO_PESSOA', 'CO_RACA_COR_PESSOA'])
+
+    # Determinando a média, mediana e desvio padrão:
+    mean_age_by_sex_and_race = df_grouped_by_sex_and_race['IDADE'].mean()
+    median_age_by_sex_and_race = df_grouped_by_sex_and_race['IDADE'].median()
+    std_age_by_sex_and_race = df_grouped_by_sex_and_race['IDADE'].std()
+    
+    stats = {"media": mean_age_by_sex_and_race, 
+             "mediana": median_age_by_sex_and_race, 
+             "desvio_padrao": std_age_by_sex_and_race
+             }
+    return stats
+
 def run():
     input_path = 'amostra.csv/*.csv'
     files = glob.glob(input_path)
@@ -9,11 +36,13 @@ def run():
         print("Os arquivos .csv não foram encontrados!")
         return
 
-    df_cad = pd.DataFrame()
+    dfs = []
 
     # Lê e concatena todos os arquivos .csv da amostra em um único DataFrame:
     for file in files:
-        df_cad = pd.concat([pd.read_csv(file)], ignore_index=True)
+        dfs.append(pd.read_csv(file))
+        
+    df_cad = pd.concat(dfs, ignore_index=True)
 
     print(f"Número de municípios distintos: {df_cad['CD_IBGE_CADASTRO'].nunique()}")
     print(f"sendo {len(df_cad[df_cad['CD_IBGE_CADASTRO'] == 3162500])} de São João del-Rei.")
@@ -42,6 +71,8 @@ def run():
     df_cad_with_mean['DIFERENCA_RENDA_MEDIA'] = df_cad_with_mean['VL_REMUNER_EMPREGO_MEMB'] - df_cad_with_mean['MEDIA_RENDA_SEXO']
     print("Mostrando a diferença entre o valor do trabalho remunerado e a média do trabalho remunerado por sexo:")
     print(df_cad_with_mean[['CO_SEXO_PESSOA', 'VL_REMUNER_EMPREGO_MEMB', 'MEDIA_RENDA_SEXO', 'DIFERENCA_RENDA_MEDIA']].head(10))
+
+    stats = get_age_distribution_by_sex_and_race(df_cad)
 
 if __name__ == '__main__':
     run()

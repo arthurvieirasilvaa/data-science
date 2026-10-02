@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import glob
 
 def add_age_column(df_cad: pd.DataFrame):
@@ -14,6 +15,93 @@ def add_age_column(df_cad: pd.DataFrame):
     df_cad_with_age['IDADE'] = 2018 - df_cad_with_age['DT_NASC_PESSOA'].dt.year
 
     return df_cad_with_age
+
+def classify_level_of_education(row):
+    course_attended = row['CO_CURSO_FREQ_PESSOA_MEMB']
+    course_attending = row['CO_CURSO_FREQUENTA_MEMB']
+    completed = row['CO_CONCLUIU_FREQUENTOU_MEMB']
+
+    # Verifica se todos os valores são NaN:
+    if pd.isna(course_attended) and pd.isna(course_attending) and pd.isna(completed):
+        return np.nan
+
+    course_attended = None if pd.isna(course_attended) else int(row['CO_CURSO_FREQ_PESSOA_MEMB'])
+    course_attending = None if pd.isna(course_attending) else int(row['CO_CURSO_FREQUENTA_MEMB'])
+    completed = None if pd.isna(completed) else int(row['CO_CONCLUIU_FREQUENTOU_MEMB'])
+
+    # Verifica se a coluna CO_CONCLUIU_FREQUENTOU_MEMB não tem informação, mas
+    # a coluna CO_CURSO_FREQ_PESSOA_MEMB possui alguma informação:
+    if (course_attended is not None) and (completed is None):
+        # Cursou Superior ou Pré-vestibular:
+        if course_attended not in [13, 14]:  
+            return np.nan
+
+        else:
+            return 5 # Médio Completo
+    
+    # Superior Incompleto (cursou Superior e não concluiu):
+    if course_attended == 13 and completed == 2:
+        return 6
+        
+    # Médio Completo (concluiu o Médio ou cursa Superior ou Pré-vestibular):
+    if (course_attended in [8, 9, 12] and completed == 1) or (course_attending in [13, 14]):
+        return 5
+
+    # Médio Incompleto (cursou o Médio e não concluiu):
+    if (course_attended in [8, 9, 12] and completed == 2):
+        return 4
+
+    # Fundamental Completo (concluiu o Fundamental ou cursa o Médio):
+    if (course_attended in [5, 6, 7, 11] and completed == 1) or (course_attending in [7, 8, 11]):
+        return 3
+
+    # Fundamental Incompleto (cursou apenas a Primeira Fase do ou cursou o
+    # Fundamental e não concluiu ou cursa da Creche até o Fundamental):
+    if (
+        course_attended == 4 and completed == 1
+        ) or (
+        course_attended in [4, 5, 6, 7, 10, 11] and completed == 2
+        ) or (
+            course_attending in [1, 2, 3, 4, 5, 6, 9, 10]
+            ):
+        return 2
+    
+    # Sem instrução (Não cursou Nenhum ou cursa Alfabetização para adultos):
+    if course_attended == 15 or course_attending == 12:
+        return 1
+        
+    return 0 # Outros
+
+def add_level_of_education_column(df_cad: pd.DataFrame):
+    df_cad_with_level_of_education = df_cad.copy()
+
+    # Convertendo os valores para valores numéricos:
+    df_cad_with_level_of_education['CO_CURSO_FREQUENTA_MEMB'] = pd.to_numeric(df_cad_with_level_of_education['CO_CURSO_FREQUENTA_MEMB'], 
+                                                                                errors='coerce')
+    df_cad_with_level_of_education['CO_CURSO_FREQ_PESSOA_MEMB'] = pd.to_numeric(df_cad_with_level_of_education['CO_CURSO_FREQ_PESSOA_MEMB'], 
+                                                                                    errors='coerce')
+    df_cad_with_level_of_education['CO_CONCLUIU_FREQUENTOU_MEMB'] = pd.to_numeric(df_cad_with_level_of_education['CO_CONCLUIU_FREQUENTOU_MEMB'], 
+                                                                                        errors='coerce')
+
+    df_cad_with_level_of_education['GRAU_INSTRUCAO'] = df_cad_with_level_of_education.apply(classify_level_of_education, axis=1)
+
+    return df_cad_with_level_of_education
+
+def calculate_mean_income_by_education_level(df_cad: pd.DataFrame):
+    df_cad_with_level_of_education = add_level_of_education_column(df_cad)
+
+    # Convertendo os valores para valores numéricos:
+    df_cad_with_level_of_education['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_with_level_of_education['VL_REMUNER_EMPREGO_MEMB'], 
+                                                                              errors='coerce'
+                                                                              )
+
+    # Agrupando por nível de instrução/escolaridade:
+    df_grouped_by_education_level = df_cad_with_level_of_education.groupby(['GRAU_INSTRUCAO'])
+
+    # Investigando a renda média do trabalho individual:
+    mean_income_by_education_level = df_grouped_by_education_level['VL_REMUNER_EMPREGO_MEMB'].mean()
+
+    return mean_income_by_education_level
 
 def calculate_age_distribution_by_sex_and_race(df_cad: pd.DataFrame):
     df_cad_with_age = add_age_column(df_cad)
@@ -39,9 +127,9 @@ def get_informal_and_formal_employment_rates(df_cad: pd.DataFrame):
                                            (df_cad_with_age['IDADE'] <= 65)
                                            ].copy()
 
-    # Convertendo os valores que serão utilizados:
-    df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] = df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'].astype(bool)
-    df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'], errors='coerce').fillna(0)
+    # Convertendo os valores para valores numéricos:
+    df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] = pd.to_numeric(df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'], errors='coerce')
+    df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'], errors='coerce')
 
     total_working_age_population = len(df_cad_filtered_ages)
     if total_working_age_population == 0: 
@@ -50,12 +138,12 @@ def get_informal_and_formal_employment_rates(df_cad: pd.DataFrame):
 
     # Obtendo o total de trabalhadores informais e informais (com carteira 
     # assinada):
-    total_informal_workers = len(df_cad_filtered_ages[df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] & 
-                                          (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] == 0)
-                                          ])
-    total_formal_workers = len(df_cad_filtered_ages[df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] & 
-                                              (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] > 0)
-                                              ])
+    total_informal_workers = len(df_cad_filtered_ages[(df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] == 1) & 
+                                                      (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] == 0)
+                                                      ])
+    total_formal_workers = len(df_cad_filtered_ages[(df_cad_filtered_ages['CO_TRABALHOU_SEMANA_MEMB'] == 1) & 
+                                                    (df_cad_filtered_ages['VL_REMUNER_EMPREGO_MEMB'] > 0)
+                                                    ])
     total_workers = total_informal_workers + total_formal_workers    
 
     # Calculando a taxa proporcional de trabalhadores informais e formais (com
@@ -122,6 +210,7 @@ def run():
 
     stats = calculate_age_distribution_by_sex_and_race(df_cad)
     get_informal_and_formal_employment_rates(df_cad)
+    calculate_mean_income_by_education_level(df_cad)
 
 if __name__ == '__main__':
     run()

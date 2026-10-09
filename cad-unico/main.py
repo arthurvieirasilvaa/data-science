@@ -14,7 +14,8 @@ def add_age_and_group_columns(df_cad: pd.DataFrame):
     # datetime:
     df_cad_modified['DT_NASC_PESSOA'] = pd.to_datetime(df_cad['DT_NASC_PESSOA'], 
                                                 format="%Y-%m-%d", 
-                                                errors="coerce")
+                                                errors="coerce"
+                                                )
     
     # Criando uma novo coluna 'IDADE' na cópia do DataFrame com base na data
     # microdados desidentificados da amostra do Cadastro Único (dezembro/2018):
@@ -71,8 +72,12 @@ def get_informal_and_formal_employment_rates(df_cad: pd.DataFrame):
                                            ].copy()
 
     # Convertendo os valores para valores numéricos:
-    df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] = pd.to_numeric(df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'], errors='coerce')
-    df_cad_modified['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_modified['VL_REMUNER_EMPREGO_MEMB'], errors='coerce')
+    df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] = pd.to_numeric(df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'], 
+                                                                errors='coerce'
+                                                                )
+    df_cad_modified['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_modified['VL_REMUNER_EMPREGO_MEMB'], 
+                                                               errors='coerce'
+                                                               )
 
     total_working_age_population = len(df_cad_modified)
     if total_working_age_population == 0: 
@@ -178,11 +183,14 @@ def add_level_of_education_column(df_cad: pd.DataFrame):
 
     # Convertendo os valores para valores numéricos:
     df_cad_modified['CO_CURSO_FREQUENTA_MEMB'] = pd.to_numeric(df_cad_modified['CO_CURSO_FREQUENTA_MEMB'], 
-                                                                                errors='coerce')
+                                                                                errors='coerce'
+                                                                                )
     df_cad_modified['CO_CURSO_FREQ_PESSOA_MEMB'] = pd.to_numeric(df_cad_modified['CO_CURSO_FREQ_PESSOA_MEMB'], 
-                                                                                    errors='coerce')
+                                                                                    errors='coerce'
+                                                                                    )
     df_cad_modified['CO_CONCLUIU_FREQUENTOU_MEMB'] = pd.to_numeric(df_cad_modified['CO_CONCLUIU_FREQUENTOU_MEMB'], 
-                                                                                        errors='coerce')
+                                                                                        errors='coerce'
+                                                                                        )
 
     df_cad_modified['GRAU_INSTRUCAO'] = df_cad_modified.apply(classify_level_of_education, axis=1)
 
@@ -295,6 +303,41 @@ def calculate_pwd_percentage_by_per_capita_income_group(df_cad: pd.DataFrame):
 
     return pwd_percentages
 
+def calculate_mean_and_median_income_difference_by_sex_and_race(df_cad: pd.DataFrame):
+    """
+        Função utilizada para calcular a diferença na média e na mediana da
+        renda individual de trabalho entre homens e mulheres quando agrupados
+        por cor/raça (branca, preta, parda, amarela e indígena).
+    """
+
+    df_cad_modified = df_cad.copy()
+
+    # Convertendo os valores para valores numéricos:
+    df_cad_modified['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_modified['VL_REMUNER_EMPREGO_MEMB'], 
+                                                                       errors='coerce'
+                                                                       )
+    df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] = pd.to_numeric(df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'], 
+                                                                           errors='coerce'
+                                                                           )
+    
+    # Filtra apenas quem tem renda individual maior do 0:
+    df_cad_modified = df_cad_modified[df_cad_modified['VL_REMUNER_EMPREGO_MEMB'] > 0]
+
+    # Agrupando por sexo/gênero e cor/raça:
+    groups = df_cad_modified.groupby(['CO_SEXO_PESSOA', 'CO_RACA_COR_PESSOA'])['VL_REMUNER_EMPREGO_MEMB']
+
+    # Separando as colunas do sexo/gênero e determinando a média e a mediana da
+    # renda individual:
+    mean_income = groups.mean().unstack(level='CO_SEXO_PESSOA')
+    mean_income['DIFERENCA_MEDIA_RENDA'] = mean_income[1] - mean_income[2]
+
+    median_income = groups.median().unstack(level='CO_SEXO_PESSOA')
+    median_income['DIFERENCA_MEDIANA_RENDA'] = median_income[1] - median_income[2]
+
+    return {"media_renda": mean_income,
+            "mediana_renda": median_income
+            }
+
 def run():
     input_path = 'amostra.csv/*.csv'
     files = glob.glob(input_path)
@@ -311,6 +354,7 @@ def run():
         
     df_cad = pd.concat(dfs, ignore_index=True)
 
+    
     stats = calculate_age_distribution_by_sex_and_race(df_cad)
     print(stats)
 
@@ -326,6 +370,12 @@ def run():
 
     pwd_percentages = calculate_pwd_percentage_by_per_capita_income_group(df_cad)
     print(pwd_percentages)
+    
+    mean_and_media_income_difference_by_sex_and_race = calculate_mean_and_median_income_difference_by_sex_and_race(df_cad)
+    print("Média da renda individual:")
+    print(mean_and_media_income_difference_by_sex_and_race["media_renda"])
+    print("Mediana da renda individual:")
+    print(mean_and_media_income_difference_by_sex_and_race["mediana_renda"])
 
 if __name__ == '__main__':
     run()

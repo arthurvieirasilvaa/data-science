@@ -241,25 +241,25 @@ def get_proportion_of_paid_employment_by_age_group(df_cad: pd.DataFrame):
 
     return proportions
 
-def calculate_pwd_percentage_by_per_capita_income_group(df_cad: pd.DataFrame):
-    """
-        Função utilizada para identificar o percentual de pessoas com 
-        deficiência (PCD) dentro de cada faixa de renda familiar per capita.
+def add_per_capita_income_column(df_cad: pd.DataFrame):
+    """"
+        Função utilizada para adicionar a coluna VL_RENDA_PER_CAPITA_FAMILIA no
+        DataFrame.
     """
 
     df_cad_modified = df_cad.copy()
 
     income_columns = ["VL_REMUNER_EMPREGO_MEMB", "VL_RENDA_BRUTA_12_MESES_MEMB",
-                     "VL_RENDA_DOACAO_MEMB", "VL_RENDA_APOSENT_MEMB",
-                     "VL_RENDA_SEGURO_DESEMP_MEMB",
-                     "VL_RENDA_PENSAO_ALIMEN_MEMB", "VL_RENDA_OUTRAS_MEMB"
-                     ]
-
+                         "VL_RENDA_DOACAO_MEMB", "VL_RENDA_APOSENT_MEMB",
+                         "VL_RENDA_SEGURO_DESEMP_MEMB",
+                         "VL_RENDA_PENSAO_ALIMEN_MEMB", "VL_RENDA_OUTRAS_MEMB"
+                         ]
+    
     # Convertendo os valores para valores numéricos:
     for income_column in income_columns:
-        df_cad_modified[income_column] = pd.to_numeric(df_cad_modified['VL_REMUNER_EMPREGO_MEMB'], 
-                                                                                  errors='coerce'
-                                                                                  )
+        df_cad_modified[income_column] = pd.to_numeric(df_cad_modified[income_column], 
+                                                                                    errors='coerce'
+                                                                                    )
 
     # Somando a renda total de cada membro:
     df_cad_modified['VL_RENDA_TOTAL_MEMB'] = df_cad_modified[income_columns].sum(axis=1)
@@ -269,6 +269,16 @@ def calculate_pwd_percentage_by_per_capita_income_group(df_cad: pd.DataFrame):
     family_size = df_cad_modified.groupby('CO_FAMILIAR_FAM')['CO_FAMILIAR_FAM'].transform('size')
 
     df_cad_modified['VL_RENDA_PER_CAPITA_FAMILIA'] = total_family_income / family_size
+
+    return df_cad_modified
+
+def calculate_pwd_percentage_by_per_capita_income_group(df_cad: pd.DataFrame):
+    """
+        Função utilizada para identificar o percentual de pessoas com 
+        deficiência (PCD) dentro de cada faixa de renda familiar per capita.
+    """
+
+    df_cad_modified = add_per_capita_income_column(df_cad)
 
     # Categorizando as faixas de renda:
     bins = [-np.inf, 109, 218, 477, np.inf] # faixas de renda
@@ -339,7 +349,11 @@ def calculate_mean_and_median_income_difference_by_sex_and_race(df_cad: pd.DataF
             }
 
 def calculate_informal_employment_percentage_rate_by_education_level(df_cad: pd.DataFrame):
-    df_cad_modified = df_cad.copy()
+    """
+        Função utilizada para calcular a taxa percentual de trabalhadores na
+        condição de trabalho informal em cada um dos níveis de escolaridade
+        (sem instrução, fundamental, médio e superior).
+    """
 
     df_cad_modified = add_level_of_education_column(df_cad)
 
@@ -355,7 +369,7 @@ def calculate_informal_employment_percentage_rate_by_education_level(df_cad: pd.
     df_cad_modified = df_cad_modified[df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] == 1]
 
     # Mapeando os grupos de níveis de escolaridade em apenas os 4 pedidos
-    # (Sem instrução, Fundamental, Médio e Superior):
+    # (sem instrução, fundamental, médio e superior):
     education_groups = {1: "Sem instrução",
                         2: "Fundamental",
                         3: "Fundamental",
@@ -391,6 +405,50 @@ def calculate_informal_employment_percentage_rate_by_education_level(df_cad: pd.
         rates[level] = informal_workers_rate
 
     return rates
+
+def get_proportion_of_pwd_by_age_and_group_and_pwd_percentage_in_extreme_poverty(df_cad: pd.DataFrame):
+    """
+        Função utilizada para calcular a proporção de Pessoas com Deficiência 
+        (PCD) registradas por faixa etária (Crianças/Adolescentes: 0-17,
+        Jovens: 18-29, Adultos: 30-59, Idosos: 60+) e qual a percentagem destas
+        pessoas que vivem em famílias classificadas na extrema pobreza (renda
+        per capita familiar de até R$ 89,00 em 2018).
+    """
+
+    df_cad_modified = add_age_and_group_columns(df_cad)
+
+    # Remove valores nulos da coluna FAIXA_ETARIA:
+    df_cad_modified = df_cad_modified.dropna(subset=['FAIXA_ETARIA'])
+
+    # Convertendo os valores para valores numéricos:
+    df_cad_modified['CO_DEFICIENCIA_MEMB'] = pd.to_numeric(df_cad_modified['CO_DEFICIENCIA_MEMB'],
+                                                               errors='coerce'
+                                                               )
+    
+    # Transformando a coluna para booleana indicando se a pessoa é PCD:
+    df_cad_modified['CO_DEFICIENCIA_MEMB'] = df_cad_modified['CO_DEFICIENCIA_MEMB'] == 1
+
+    # As proporções dos grupos serão as médias da coluna booleana 
+    # CO_DEFICIENCIA_MEMB:
+    proportion = df_cad_modified.groupby('FAIXA_ETARIA')['CO_DEFICIENCIA_MEMB'].mean()
+
+    df_cad_modified = add_per_capita_income_column(df_cad_modified)
+
+    # Filtra apenas os PCDs:
+    df_cad_modified = df_cad_modified[df_cad_modified['CO_DEFICIENCIA_MEMB'] == True]
+    total_pwd = len(df_cad_modified)
+
+    # Verifica se há Pessoas com Deficiência (PCD):
+    if total_pwd > 0:
+        pwd_extreme_poverty = (df_cad_modified['VL_RENDA_PER_CAPITA_FAMILIA'] <= 89).sum()
+        pwd_percentage_in_extreme_poverty = (pwd_extreme_poverty / total_pwd) * 100.0
+    
+    else:
+        pwd_percentage_in_extreme_poverty = 0.0
+
+    return {"proporcao_pcd_por_faixa_etaria": proportion,
+            "percentagem_pcd_na_extrema_pobreza": pwd_percentage_in_extreme_poverty
+            }
 
 def run():
     input_path = 'amostra.csv/*.csv'
@@ -432,6 +490,10 @@ def run():
 
     rates = calculate_informal_employment_percentage_rate_by_education_level(df_cad)
     print(rates)
+    
+    stats = get_proportion_of_pwd_by_age_and_group_and_pwd_percentage_in_extreme_poverty(df_cad)
+    print(stats["proporcao_pcd_por_faixa_etaria"])
+    print(stats["percentagem_pcd_na_extrema_pobreza"])
 
 if __name__ == '__main__':
     run()

@@ -338,6 +338,60 @@ def calculate_mean_and_median_income_difference_by_sex_and_race(df_cad: pd.DataF
             "mediana_renda": median_income
             }
 
+def calculate_informal_employment_percentage_rate_by_education_level(df_cad: pd.DataFrame):
+    df_cad_modified = df_cad.copy()
+
+    df_cad_modified = add_level_of_education_column(df_cad)
+
+    # Convertendo os valores para valores numéricos:
+    df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] = pd.to_numeric(df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'], 
+                                                                    errors='coerce'
+                                                                    )
+    df_cad_modified['VL_REMUNER_EMPREGO_MEMB'] = pd.to_numeric(df_cad_modified['VL_REMUNER_EMPREGO_MEMB'], 
+                                                                   errors='coerce'
+                                                                   )
+
+    # Filtra apenas os trabalhadores:
+    df_cad_modified = df_cad_modified[df_cad_modified['CO_TRABALHOU_SEMANA_MEMB'] == 1]
+
+    # Mapeando os grupos de níveis de escolaridade em apenas os 4 pedidos
+    # (Sem instrução, Fundamental, Médio e Superior):
+    education_groups = {1: "Sem instrução",
+                        2: "Fundamental",
+                        3: "Fundamental",
+                        4: "Médio",
+                        5: "Médio",
+                        6: "Superior"}
+
+    df_cad_modified['GRAU_INSTRUCAO'] = (
+        df_cad_modified['GRAU_INSTRUCAO'].map(education_groups)
+        )
+
+    # Remove valores nulos das colunas VL_REMUNER_EMPREGO_MEMB e 
+    # GRAU_INSTRUCAO:
+    df_cad_modified = df_cad_modified.dropna(subset=['VL_REMUNER_EMPREGO_MEMB', 'GRAU_INSTRUCAO'])
+
+    groups = df_cad_modified.groupby('GRAU_INSTRUCAO') # agrupando por nível de escolaridade
+
+    rates = {}
+    for level, group in groups:
+        total_workers = len(group) # obtém o número total de trabalhadores
+
+        # Verifica se não há trabalhadores no nível de escolaridade:
+        if total_workers == 0:
+            rates[level] = 0.0
+            continue
+
+        # Obtém o número de trabalhadores informais:
+        total_informal_workers = (group['VL_REMUNER_EMPREGO_MEMB'] == 0).sum()
+
+        # Calculando a taxa proporcional de trabalhadores informais:
+        informal_workers_rate = (total_informal_workers / total_workers) * 100.0
+
+        rates[level] = informal_workers_rate
+
+    return rates
+
 def run():
     input_path = 'amostra.csv/*.csv'
     files = glob.glob(input_path)
@@ -354,7 +408,6 @@ def run():
         
     df_cad = pd.concat(dfs, ignore_index=True)
 
-    
     stats = calculate_age_distribution_by_sex_and_race(df_cad)
     print(stats)
 
@@ -376,6 +429,9 @@ def run():
     print(mean_and_media_income_difference_by_sex_and_race["media_renda"])
     print("Mediana da renda individual:")
     print(mean_and_media_income_difference_by_sex_and_race["mediana_renda"])
+
+    rates = calculate_informal_employment_percentage_rate_by_education_level(df_cad)
+    print(rates)
 
 if __name__ == '__main__':
     run()

@@ -1,0 +1,2727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_231c2ee3737c5718d3c2e920a54246e2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_231c2ee3737c5718d3c2e920a54246e2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_231c2ee3737c5718d3c2e920a54246e2 = L.map(
+                "map_231c2ee3737c5718d3c2e920a54246e2",
+                {
+                    center: [-20.5233, -43.6914],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1e991594f63f85bf958ea40fdc019fb7 = L.tileLayer(
+                "https://tile.openstreetmap.de/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u0026copy; OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1e991594f63f85bf958ea40fdc019fb7.addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            var circle_marker_8310d5f6926e658f7769c5217e8a9216 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "#f19a9bff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9bff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_8310d5f6926e658f7769c5217e8a9216.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 138<br>
+                <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.08%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.92%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 4.17 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee0c0914372436d6f4ff21943d602cce = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_ee0c0914372436d6f4ff21943d602cce.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 139<br>
+                <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.12%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.88%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 1.77 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_084a002c0f50492f72d54014877758b1 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "#5062c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5062c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_084a002c0f50492f72d54014877758b1.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 140<br>
+                <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.60%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.40%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 4.80 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4973369a800374c9391a4945c65fb7dc = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "#5265c5ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5265c5ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_4973369a800374c9391a4945c65fb7dc.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 141<br>
+                <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.66%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.34%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 0.68 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc43ce4ec4fcece8634be511318bda91 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_fc43ce4ec4fcece8634be511318bda91.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 142<br>
+                <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.00%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.00%<br>
+                <hr>
+                <b>Candidato líder:</b> Empate<br>
+                <b>Diferença:</b> 0.00 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c950b5be3b4706ee4f561d7bb21bfc37 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4757b9ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4757b9ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c950b5be3b4706ee4f561d7bb21bfc37.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 143<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 37.20%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 62.80%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 25.60 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68bb744b2eeea6cb9ec5a61d49ba7394 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4b5cbeff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4b5cbeff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_68bb744b2eeea6cb9ec5a61d49ba7394.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 144<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 41.86%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 58.14%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 16.28 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08727665e815771dc8e8f7f5bf592105 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4655b8ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4655b8ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_08727665e815771dc8e8f7f5bf592105.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 145<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 36.05%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 63.95%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 27.89 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7dedb8b0f9c51723714bca028a88943f = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4d5ec0ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4d5ec0ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_7dedb8b0f9c51723714bca028a88943f.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 146<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 44.11%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 55.89%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 11.78 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0e91a852ba7d09dd25dda7b3acf2c79 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4e60c1ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e60c1ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c0e91a852ba7d09dd25dda7b3acf2c79.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 147<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 45.68%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 54.32%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 8.63 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d08b654598578455c0ef431fd03c0b1 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f29e9eff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29e9eff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_3d08b654598578455c0ef431fd03c0b1.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 148<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.85%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 49.15%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 1.71 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c60dc18286bb2ab9c123111dff720ec = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f19b9cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19b9cff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_3c60dc18286bb2ab9c123111dff720ec.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 149<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.83%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.17%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 3.65 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c89726ac5c4991aabaeca683f0b78a50 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f19698ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19698ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c89726ac5c4991aabaeca683f0b78a50.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 150<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.45%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.55%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 6.90 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d445325eef6615da3a0e2f1426a9d6e = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f09496ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09496ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_5d445325eef6615da3a0e2f1426a9d6e.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 151<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 54.10%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 45.90%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 8.20 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bec62147bbf42e5d943d39038fc416c2 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f2a0a0ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2a0a0ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_bec62147bbf42e5d943d39038fc416c2.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 152<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.18%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 49.82%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 0.36 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3a2212cf15f98e46c053faab2100d67 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_b3a2212cf15f98e46c053faab2100d67.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 153<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.81%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.19%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 2.39 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e5fa451ad208ea89db9d7641959baaf = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_9e5fa451ad208ea89db9d7641959baaf.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 154<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.00%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.00%<br>
+                <hr>
+                <b>Candidato líder:</b> Empate<br>
+                <b>Diferença:</b> 0.00 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2305f8c96b53be1f4981778e48a8fc32 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_2305f8c96b53be1f4981778e48a8fc32.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 155<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.00%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.00%<br>
+                <hr>
+                <b>Candidato líder:</b> Empate<br>
+                <b>Diferença:</b> 0.00 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d2fce19c80fa74cecb2e08f16eb7244 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "#f29c9dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29c9dff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_8d2fce19c80fa74cecb2e08f16eb7244.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 156<br>
+                <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.25%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.75%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 2.51 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cdd566784e9b1ae1d3f9b5f2b4e3591a = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "#4859bbff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4859bbff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_cdd566784e9b1ae1d3f9b5f2b4e3591a.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 157<br>
+                <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 39.17%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 60.83%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 21.66 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2be280be3811867727eede7346d4ce00 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "#5063c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5063c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_2be280be3811867727eede7346d4ce00.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 158<br>
+                <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.42%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.58%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 3.17 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09d6a6b0bb799e70dd4ca8c5ffff0856 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "#4a5bbdff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4a5bbdff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_09d6a6b0bb799e70dd4ca8c5ffff0856.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 159<br>
+                <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 41.01%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 58.99%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 17.97 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70ecc4aa4ef0b0d8e7be5f0a9716d9b5 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "#4b5cbeff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4b5cbeff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_70ecc4aa4ef0b0d8e7be5f0a9716d9b5.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 160<br>
+                <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 42.47%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 57.53%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 15.07 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a23f914387a48360395005111e65bba = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "#5063c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5063c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_1a23f914387a48360395005111e65bba.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 161<br>
+                <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.40%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.60%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 3.20 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54377ce2f8f36a2866f13db733201e45 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#f09598ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09598ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_54377ce2f8f36a2866f13db733201e45.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 162<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.54%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.46%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 7.07 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17807cce44b7fa1fcc847991ec76f066 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#f29c9dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29c9dff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_17807cce44b7fa1fcc847991ec76f066.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 163<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.44%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.56%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 2.88 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_753d14a12e0e77b1a649f8f23f04b109 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#ef9093ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef9093ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_753d14a12e0e77b1a649f8f23f04b109.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 164<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 55.34%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 44.66%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 10.68 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_612d23986f14800947a2b4463648399f = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#5265c5ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5265c5ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_612d23986f14800947a2b4463648399f.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 165<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.84%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.16%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 0.32 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e2495e3d88fa44b45810adf197bb212 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#5062c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5062c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_3e2495e3d88fa44b45810adf197bb212.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 166<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.42%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.58%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 5.16 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f76f2397ab8cf9bdd8b6fb83abb02245 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#f29c9dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29c9dff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_f76f2397ab8cf9bdd8b6fb83abb02245.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 167<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.31%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.69%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 2.61 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c056f4819a1a92226a15d3983d038184 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#f19799ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19799ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c056f4819a1a92226a15d3983d038184.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 168<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.14%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.86%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 6.29 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_616cb49f6f9bd9241613881f3e22f607 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "#ee898eff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ee898eff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_616cb49f6f9bd9241613881f3e22f607.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 169<br>
+                <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 57.43%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 42.57%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 14.85 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84d01e3a44ebcf513db34285e742d122 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#f09194ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09194ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_84d01e3a44ebcf513db34285e742d122.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 170<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 55.10%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 44.90%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 10.20 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6f07907eb14379968e8be58cfdb826e = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#f1989aff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1989aff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c6f07907eb14379968e8be58cfdb826e.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 171<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.53%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.47%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 5.06 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c2ba950b67de6e62cecce4e706c88de = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#4c5dbfff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4c5dbfff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_1c2ba950b67de6e62cecce4e706c88de.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 172<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 43.04%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 56.96%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 13.92 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90a69a8d951c07aadde48e3b295317e8 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#f19698ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19698ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_90a69a8d951c07aadde48e3b295317e8.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 173<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.33%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.67%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 6.67 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53f999d032b9eaaefe9c1556704ce081 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#f29fa0ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29fa0ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_53f999d032b9eaaefe9c1556704ce081.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 174<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.22%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 49.78%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 0.45 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_36b2044f9d8c7938218e765c936785a7 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#5062c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5062c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_36b2044f9d8c7938218e765c936785a7.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 175<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.72%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.28%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 4.56 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71e34840ab5af647fb1e290c90b48e50 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "#4f62c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4f62c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_71e34840ab5af647fb1e290c90b48e50.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 176<br>
+                <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.19%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.81%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 5.61 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_106132adeb66a47634bc03c716ddb210 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_106132adeb66a47634bc03c716ddb210.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 177<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.00%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.00%<br>
+                <hr>
+                <b>Candidato líder:</b> Empate<br>
+                <b>Diferença:</b> 0.00 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa5d2f37d446c3f77b273635f053d7cf = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_fa5d2f37d446c3f77b273635f053d7cf.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 178<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.14%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.86%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 1.72 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fe92300ded523583d0129cd1e56b280 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#5062c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5062c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_6fe92300ded523583d0129cd1e56b280.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 179<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.46%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.54%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 5.08 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5f46e013643daeffca612826c41286a = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#f09597ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09597ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_b5f46e013643daeffca612826c41286a.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 180<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.74%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.26%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 7.48 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be023ade5ff72be1b4fd6a2746bb08fb = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#f19a9bff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9bff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_be023ade5ff72be1b4fd6a2746bb08fb.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 181<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.10%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.90%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 4.20 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6294ed9074ed0c30892265a2ea08e543 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#f29f9fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29f9fff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_6294ed9074ed0c30892265a2ea08e543.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 182<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.52%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 49.48%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 1.04 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb5c6b9cbb0611f9f96ad63da1af59a7 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#5164c5ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c5ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_cb5c6b9cbb0611f9f96ad63da1af59a7.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 183<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.50%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.50%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 0.99 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e743603b237662a03d13cff34145639 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "#f09496ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09496ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_8e743603b237662a03d13cff34145639.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 184<br>
+                <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 54.04%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 45.96%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 8.09 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f2a85a4c5749362c6a10ec4da5c4243 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#5063c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5063c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_3f2a85a4c5749362c6a10ec4da5c4243.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 185<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.41%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.59%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 3.18 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_04aed8473597e1e841ed1104aae1e6ad = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_04aed8473597e1e841ed1104aae1e6ad.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 186<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.03%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.97%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 1.94 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1df3e5772fa152ad7f1f06f09ea1d1f9 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#ef8f92ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8f92ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_1df3e5772fa152ad7f1f06f09ea1d1f9.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 190<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 55.66%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 44.34%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 11.32 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f3039987fa1d562a22c8069fbbaf8f5 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#f29b9cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29b9cff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_7f3039987fa1d562a22c8069fbbaf8f5.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 191<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.56%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.44%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 3.12 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f7d5e377a0e1e7decf191145a716058 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#f19b9cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19b9cff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_2f7d5e377a0e1e7decf191145a716058.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 193<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.76%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.24%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 3.51 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2065732cd22131d5edc6bb856fd704b3 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "#f09396ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09396ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_2065732cd22131d5edc6bb856fd704b3.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 195<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 54.24%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 45.76%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 8.47 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_822a2a39c12a8abbaf492ad4a01c56be = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "#eb767fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eb767fff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_822a2a39c12a8abbaf492ad4a01c56be.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 196<br>
+                <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 63.94%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 36.06%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 27.88 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddca18faeac1fe9b36ade1024f4f58b7 = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "#ee8b8fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ee8b8fff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_ddca18faeac1fe9b36ade1024f4f58b7.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 197<br>
+                <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 57.06%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 42.94%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 14.12 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f69eb33c5573dfdfe0dda97776f65524 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "#f19698ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19698ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_f69eb33c5573dfdfe0dda97776f65524.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 198<br>
+                <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.27%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.73%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 6.54 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2919541c1c2480bdba487e21ef0f091f = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "#5164c5ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c5ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_2919541c1c2480bdba487e21ef0f091f.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 199<br>
+                <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.44%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.56%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 1.12 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d4cea3faa53728fdce1331c55c47831 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "#ef8d91ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8d91ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_7d4cea3faa53728fdce1331c55c47831.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 200<br>
+                <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.25%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.75%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 12.50 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b102b8b73150fb3dc897beb06b97b31a = L.circleMarker(
+                [-20.4912047, -43.601871],
+                {"bubblingMouseEvents": true, "color": "#e96e78ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e96e78ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_b102b8b73150fb3dc897beb06b97b31a.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 201<br>
+                <b>Local:</b> BIBLIOTECA COMUNITÁRIA PROFESSOR REINALDO ALVES DE BRITO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 66.51%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 33.49%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 33.02 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8e2937b8d543184a3bb570aed48948c = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "#e65c6aff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e65c6aff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c8e2937b8d543184a3bb570aed48948c.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 202<br>
+                <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 72.48%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 27.52%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 44.96 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03f934edf751e74c9c0d2ab5e2f3bdfb = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "#e55968ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e55968ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_03f934edf751e74c9c0d2ab5e2f3bdfb.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 203<br>
+                <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 73.26%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 26.74%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 46.51 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e736820ba55a6974336b299f5df4fcb8 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "#4e60c1ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4e60c1ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_e736820ba55a6974336b299f5df4fcb8.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 204<br>
+                <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 45.70%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 54.30%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 8.59 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ece2b65531e5116a683a9c2302f90d4 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "#f29f9fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29f9fff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_3ece2b65531e5116a683a9c2302f90d4.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 205<br>
+                <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.40%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 49.60%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 0.80 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6c4ef508e57174e8d7ba1353eb16bd9 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "#f29d9dff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29d9dff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_a6c4ef508e57174e8d7ba1353eb16bd9.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 206<br>
+                <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.13%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.87%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 2.26 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03852ca74f1b8dce02dde670f6457064 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "#f29d9eff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f29d9eff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_03852ca74f1b8dce02dde670f6457064.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 207<br>
+                <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.04%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.96%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 2.07 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cae9a92c2f105c99cbb6add49ab98bc2 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_cae9a92c2f105c99cbb6add49ab98bc2.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 208<br>
+                <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 49.03%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.97%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 1.95 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82f265783c200735c196d1e82acab508 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "#ef8f92ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8f92ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_82f265783c200735c196d1e82acab508.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 209<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 55.72%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 44.28%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 11.44 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_21264996786cf8aeee71b934a5d8887a = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "#5062c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5062c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_21264996786cf8aeee71b934a5d8887a.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 210<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 47.62%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 52.38%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 4.76 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fcb9037dcd1005afa1a9b08fcbf5731 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "#ef8d91ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8d91ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_1fcb9037dcd1005afa1a9b08fcbf5731.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 211<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.19%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.81%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 12.38 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c644fe781f7d2b006cc56758601b0c2 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "#ef8e91ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8e91ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_7c644fe781f7d2b006cc56758601b0c2.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 212<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.10%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.90%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 12.20 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_255e4a9767551ef83cca802732c195ab = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "#4f61c2ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4f61c2ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_255e4a9767551ef83cca802732c195ab.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 213<br>
+                <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 46.74%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 53.26%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 6.53 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b6e35fd4ce6f7c17aa6cbf5248a2d24f = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "#f09496ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f09496ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_b6e35fd4ce6f7c17aa6cbf5248a2d24f.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 214<br>
+                <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 54.03%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 45.97%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 8.05 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62e38c8e6c1c9b605cf86f182b68e535 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "#ef8c90ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8c90ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_62e38c8e6c1c9b605cf86f182b68e535.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 215<br>
+                <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.61%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.39%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 13.22 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d2b569a2c87e4820008ccfcc52db90a = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "#ef8f93ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8f93ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_8d2b569a2c87e4820008ccfcc52db90a.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 216<br>
+                <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 55.63%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 44.37%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 11.26 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d97c20f78a45085e1686d1609500abe3 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "#f19a9bff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9bff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_d97c20f78a45085e1686d1609500abe3.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 217<br>
+                <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.01%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.99%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 4.03 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c267cd5b0c0889dd3832966c682754e4 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "#5063c3ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5063c3ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_c267cd5b0c0889dd3832966c682754e4.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 218<br>
+                <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.07%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.93%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 3.86 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c936818e1e73295abcaf5e9c6744d64 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "#ee898eff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ee898eff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_4c936818e1e73295abcaf5e9c6744d64.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 219<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 57.67%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 42.33%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 15.33 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68e7d6f1169e092abea09518f394cd38 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "#ef8c90ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8c90ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_68e7d6f1169e092abea09518f394cd38.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 220<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.51%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.49%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 13.01 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80d67486951045061a79a1183cb62a59 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "#ef8c90ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8c90ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_80d67486951045061a79a1183cb62a59.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 221<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 56.62%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 43.38%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 13.25 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8ada70189aa4c5a0d3832a5d8884a17 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "#ed8389ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ed8389ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_f8ada70189aa4c5a0d3832a5d8884a17.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 222<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 59.65%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 40.35%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 19.30 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b315f321e7ef49866ae1bed25571db3 = L.circleMarker(
+                [-20.5073333, -43.6567219],
+                {"bubblingMouseEvents": true, "color": "#ed8187ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ed8187ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_4b315f321e7ef49866ae1bed25571db3.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 223<br>
+                <b>Local:</b> POSTO DE SAÚDE DE CARREIRAS<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 60.36%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 39.64%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 20.71 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_35ac11dcb7209babbb5ebfd52f6a147b = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "#eb7981ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eb7981ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_35ac11dcb7209babbb5ebfd52f6a147b.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 226<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 62.93%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 37.07%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 25.85 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1bd63cf6f9eb9814c4073a32ceccc630 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "#eb777fff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eb777fff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_1bd63cf6f9eb9814c4073a32ceccc630.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 227<br>
+                <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 63.64%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 36.36%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 27.27 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fb11f2178fbda5a469663fbaeb97513 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "#f19a9cff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9cff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_4fb11f2178fbda5a469663fbaeb97513.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 228<br>
+                <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 51.89%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 48.11%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 3.77 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a234de86cef0ac23bdf3759138b8174 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "#f19a9bff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9bff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_5a234de86cef0ac23bdf3759138b8174.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 229<br>
+                <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.15%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.85%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 4.29 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50407f3db13be3be9df01e55ed485eb0 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "#5164c4ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5164c4ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_50407f3db13be3be9df01e55ed485eb0.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 230<br>
+                <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 48.92%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 51.08%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 2.15 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8792dbf54dfc62c76ae9742e1b095df = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "#FFFFFF", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFFFF", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_f8792dbf54dfc62c76ae9742e1b095df.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 231<br>
+                <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 50.00%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 50.00%<br>
+                <hr>
+                <b>Candidato líder:</b> Empate<br>
+                <b>Diferença:</b> 0.00 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b810948e7c4e9604b70b4b887b6c8b7 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "#f19698ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19698ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_5b810948e7c4e9604b70b4b887b6c8b7.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 232<br>
+                <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 53.35%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 46.65%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 6.71 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43ec184a44f0acc8f0fa81e94d5c95b3 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "#4a5abcff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4a5abcff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_43ec184a44f0acc8f0fa81e94d5c95b3.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 233<br>
+                <b>Local:</b> COLEGIO BATISTA MINEIRO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 40.38%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 59.62%<br>
+                <hr>
+                <b>Candidato líder:</b> FLAVIO NANTES BOLSONARO<br>
+                <b>Diferença:</b> 19.24 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53aaf1712ca03022ba20ebf7210d6eb5 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "#f19a9bff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f19a9bff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_53aaf1712ca03022ba20ebf7210d6eb5.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 234<br>
+                <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 52.02%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 47.98%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 4.03 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2040e779331ed334402c5e769f5c1e2 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "#ed8087ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ed8087ff", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 1}
+            ).addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+        
+    
+            circle_marker_b2040e779331ed334402c5e769f5c1e2.bindTooltip(
+                `<div>
+                     
+            <div style="font-family: Arial; font-size: 12px;">
+                <b>Zona:</b> 88<br>
+                <b>Seção:</b> 236<br>
+                <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br>
+                <hr>
+                <b>LUIZ INÁCIO LULA DA SILVA:</b> 60.38%<br>
+                <b>FLAVIO NANTES BOLSONARO:</b> 39.62%<br>
+                <hr>
+                <b>Candidato líder:</b> LUIZ INÁCIO LULA DA SILVA<br>
+                <b>Diferença:</b> 20.75 p.p.
+            </div>
+            
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+    var color_map_9bb6cf1f677db8a79842f5d6cd52578a = {};
+
+    
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.color = d3.scale.threshold()
+              .domain([-100.0, -99.59919839679358, -99.19839679358718, -98.79759519038076, -98.39679358717434, -97.99599198396794, -97.59519038076152, -97.1943887775551, -96.7935871743487, -96.39278557114228, -95.99198396793587, -95.59118236472946, -95.19038076152304, -94.78957915831663, -94.38877755511022, -93.9879759519038, -93.58717434869739, -93.18637274549098, -92.78557114228457, -92.38476953907815, -91.98396793587175, -91.58316633266533, -91.18236472945893, -90.78156312625251, -90.38076152304609, -89.97995991983967, -89.57915831663327, -89.17835671342685, -88.77755511022045, -88.37675350701403, -87.97595190380761, -87.5751503006012, -87.17434869739479, -86.77354709418837, -86.37274549098197, -85.97194388777555, -85.57114228456913, -85.17034068136273, -84.76953907815631, -84.3687374749499, -83.96793587174349, -83.56713426853707, -83.16633266533066, -82.76553106212425, -82.36472945891784, -81.96392785571142, -81.56312625250501, -81.1623246492986, -80.76152304609218, -80.36072144288578, -79.95991983967936, -79.55911823647294, -79.15831663326654, -78.75751503006012, -78.3567134268537, -77.9559118236473, -77.55511022044088, -77.15430861723448, -76.75350701402806, -76.35270541082164, -75.95190380761522, -75.55110220440882, -75.1503006012024, -74.749498997996, -74.34869739478958, -73.94789579158316, -73.54709418837675, -73.14629258517034, -72.74549098196393, -72.34468937875752, -71.9438877755511, -71.54308617234469, -71.14228456913827, -70.74148296593187, -70.34068136272545, -69.93987975951904, -69.53907815631263, -69.13827655310621, -68.73747494989979, -68.33667334669339, -67.93587174348698, -67.53507014028057, -67.13426853707415, -66.73346693386773, -66.33266533066131, -65.93186372745491, -65.5310621242485, -65.13026052104209, -64.72945891783567, -64.32865731462925, -63.92785571142284, -63.52705410821643, -63.12625250501002, -62.725450901803605, -62.324649298597194, -61.92384769539078, -61.523046092184366, -61.122244488977955, -60.721442885771545, -60.32064128256513, -59.91983967935872, -59.519038076152306, -59.11823647294589, -58.71743486973948, -58.31663326653307, -57.91583166332666, -57.51503006012024, -57.11422845691383, -56.71342685370742, -56.312625250501, -55.91182364729459, -55.51102204408818, -55.11022044088176, -54.70941883767535, -54.30861723446894, -53.90781563126252, -53.50701402805611, -53.1062124248497, -52.705410821643284, -52.30460921843687, -51.90380761523046, -51.503006012024045, -51.102204408817634, -50.701402805611224, -50.300601202404806, -49.899799599198396, -49.498997995991985, -49.098196392785574, -48.69739478957916, -48.296593186372746, -47.895791583166336, -47.49498997995992, -47.09418837675351, -46.6933867735471, -46.29258517034068, -45.89178356713427, -45.49098196392786, -45.09018036072144, -44.68937875751503, -44.28857715430862, -43.8877755511022, -43.48697394789579, -43.08617234468938, -42.68537074148296, -42.28456913827655, -41.88376753507014, -41.482965931863724, -41.08216432865731, -40.6813627254509, -40.28056112224449, -39.879759519038075, -39.478957915831664, -39.078156312625254, -38.677354709418836, -38.276553106212425, -37.875751503006015, -37.4749498997996, -37.07414829659319, -36.673346693386776, -36.27254509018036, -35.871743486973955, -35.47094188376754, -35.07014028056112, -34.669338677354716, -34.2685370741483, -33.86773547094188, -33.46693386773548, -33.06613226452906, -32.66533066132264, -32.26452905811624, -31.86372745490982, -31.462925851703403, -31.062124248497, -30.661322645290582, -30.260521042084164, -29.85971943887776, -29.458917835671343, -29.058116232464926, -28.657314629258522, -28.256513026052104, -27.855711422845687, -27.454909819639283, -27.054108216432866, -26.653306613226448, -26.252505010020045, -25.851703406813627, -25.45090180360721, -25.050100200400806, -24.649298597194388, -24.24849699398797, -23.847695390781567, -23.44689378757515, -23.04609218436873, -22.645290581162328, -22.24448897795591, -21.843687374749493, -21.44288577154309, -21.04208416833667, -20.641282565130254, -20.24048096192385, -19.839679358717433, -19.438877755511015, -19.038076152304612, -18.637274549098194, -18.236472945891776, -17.835671342685373, -17.434869739478955, -17.034068136272552, -16.633266533066134, -16.232464929859717, -15.831663326653313, -15.430861723446895, -15.030060120240478, -14.629258517034074, -14.228456913827657, -13.827655310621239, -13.426853707414836, -13.026052104208418, -12.625250501002, -12.224448897795597, -11.823647294589179, -11.422845691382761, -11.022044088176358, -10.62124248496994, -10.220440881763523, -9.81963927855712, -9.418837675350701, -9.018036072144284, -8.61723446893788, -8.216432865731463, -7.815631262525045, -7.414829659318642, -7.014028056112224, -6.613226452905806, -6.212424849699403, -5.811623246492985, -5.4108216432865675, -5.010020040080164, -4.609218436873746, -4.208416833667329, -3.807615230460925, -3.4068136272545075, -3.00601202404809, -2.6052104208416864, -2.2044088176352687, -1.803607214428851, -1.4028056112224476, -1.00200400801603, -0.6012024048096123, -0.20040080160320883, 0.20040080160320883, 0.6012024048096123, 1.00200400801603, 1.4028056112224476, 1.803607214428851, 2.2044088176352687, 2.6052104208416864, 3.00601202404809, 3.4068136272545075, 3.807615230460925, 4.208416833667329, 4.609218436873746, 5.010020040080164, 5.4108216432865675, 5.811623246492985, 6.212424849699403, 6.613226452905806, 7.014028056112224, 7.414829659318642, 7.815631262525045, 8.216432865731463, 8.61723446893788, 9.018036072144284, 9.418837675350701, 9.81963927855712, 10.220440881763523, 10.62124248496994, 11.022044088176358, 11.422845691382761, 11.823647294589179, 12.224448897795597, 12.625250501002, 13.026052104208418, 13.426853707414836, 13.827655310621239, 14.228456913827657, 14.629258517034074, 15.030060120240478, 15.430861723446895, 15.831663326653313, 16.232464929859717, 16.633266533066134, 17.034068136272552, 17.434869739478955, 17.835671342685373, 18.236472945891776, 18.637274549098194, 19.038076152304612, 19.438877755511015, 19.839679358717433, 20.24048096192385, 20.641282565130254, 21.04208416833667, 21.44288577154309, 21.843687374749493, 22.24448897795591, 22.645290581162328, 23.04609218436873, 23.44689378757515, 23.847695390781567, 24.24849699398797, 24.649298597194388, 25.050100200400806, 25.45090180360721, 25.851703406813627, 26.252505010020045, 26.653306613226448, 27.054108216432866, 27.454909819639283, 27.855711422845687, 28.25651302605209, 28.657314629258508, 29.058116232464926, 29.458917835671343, 29.85971943887776, 30.26052104208418, 30.661322645290568, 31.062124248496986, 31.462925851703403, 31.86372745490982, 32.26452905811624, 32.665330661322656, 33.066132264529045, 33.46693386773546, 33.86773547094188, 34.2685370741483, 34.669338677354716, 35.070140280561134, 35.47094188376752, 35.87174348697394, 36.27254509018036, 36.673346693386776, 37.074148296593194, 37.47494989979961, 37.875751503006, 38.27655310621242, 38.677354709418836, 39.078156312625254, 39.47895791583167, 39.87975951903809, 40.28056112224448, 40.681362725450896, 41.08216432865731, 41.48296593186373, 41.88376753507015, 42.28456913827657, 42.685370741482956, 43.08617234468937, 43.48697394789579, 43.88777555110221, 44.288577154308626, 44.689378757515044, 45.09018036072143, 45.49098196392785, 45.89178356713427, 46.292585170340686, 46.693386773547104, 47.09418837675349, 47.49498997995991, 47.89579158316633, 48.296593186372746, 48.697394789579164, 49.09819639278558, 49.49899799599197, 49.89979959919839, 50.300601202404806, 50.701402805611224, 51.10220440881764, 51.50300601202406, 51.90380761523045, 52.304609218436866, 52.705410821643284, 53.1062124248497, 53.50701402805612, 53.90781563126254, 54.308617234468926, 54.709418837675344, 55.11022044088176, 55.51102204408818, 55.9118236472946, 56.312625250501014, 56.7134268537074, 57.11422845691382, 57.51503006012024, 57.91583166332666, 58.316633266533074, 58.71743486973949, 59.11823647294588, 59.5190380761523, 59.91983967935872, 60.320641282565134, 60.72144288577155, 61.12224448897797, 61.52304609218436, 61.923847695390776, 62.324649298597194, 62.72545090180361, 63.12625250501003, 63.52705410821645, 63.927855711422836, 64.32865731462925, 64.72945891783567, 65.13026052104209, 65.5310621242485, 65.9318637274549, 66.33266533066131, 66.73346693386773, 67.13426853707415, 67.53507014028057, 67.93587174348698, 68.33667334669337, 68.73747494989979, 69.13827655310621, 69.53907815631263, 69.93987975951904, 70.34068136272546, 70.74148296593185, 71.14228456913827, 71.54308617234469, 71.9438877755511, 72.34468937875752, 72.74549098196394, 73.14629258517033, 73.54709418837675, 73.94789579158316, 74.34869739478958, 74.749498997996, 75.15030060120242, 75.5511022044088, 75.95190380761522, 76.35270541082164, 76.75350701402806, 77.15430861723448, 77.5551102204409, 77.95591182364728, 78.3567134268537, 78.75751503006012, 79.15831663326654, 79.55911823647295, 79.95991983967937, 80.36072144288576, 80.76152304609218, 81.1623246492986, 81.56312625250501, 81.96392785571143, 82.36472945891782, 82.76553106212424, 83.16633266533066, 83.56713426853707, 83.96793587174349, 84.36873747494991, 84.7695390781563, 85.17034068136272, 85.57114228456913, 85.97194388777555, 86.37274549098197, 86.77354709418839, 87.17434869739478, 87.5751503006012, 87.97595190380761, 88.37675350701403, 88.77755511022045, 89.17835671342687, 89.57915831663325, 89.97995991983967, 90.38076152304609, 90.78156312625251, 91.18236472945893, 91.58316633266534, 91.98396793587173, 92.38476953907815, 92.78557114228457, 93.18637274549098, 93.5871743486974, 93.98797595190382, 94.38877755511021, 94.78957915831663, 95.19038076152304, 95.59118236472946, 95.99198396793588, 96.3927855711423, 96.79358717434869, 97.1943887775551, 97.59519038076152, 97.99599198396794, 98.39679358717436, 98.79759519038078, 99.19839679358716, 99.59919839679358, 100.0])
+              .range(['#272d97ff', '#272d97ff', '#272d97ff', '#272d98ff', '#272e98ff', '#282e98ff', '#282e98ff', '#282e98ff', '#282e99ff', '#282f99ff', '#282f99ff', '#292f99ff', '#292f99ff', '#293099ff', '#29309aff', '#29309aff', '#29309aff', '#2a319aff', '#2a319aff', '#2a319bff', '#2a319bff', '#2a319bff', '#2a329bff', '#2b329bff', '#2b329cff', '#2b329cff', '#2b339cff', '#2b339cff', '#2b339cff', '#2c339cff', '#2c339dff', '#2c349dff', '#2c349dff', '#2c349dff', '#2d349dff', '#2d359eff', '#2d359eff', '#2d359eff', '#2d359eff', '#2d359eff', '#2e369eff', '#2e369fff', '#2e369fff', '#2e369fff', '#2e379fff', '#2e379fff', '#2f37a0ff', '#2f37a0ff', '#2f37a0ff', '#2f38a0ff', '#2f38a0ff', '#2f38a1ff', '#3038a1ff', '#3039a1ff', '#3039a1ff', '#3039a1ff', '#3039a1ff', '#313aa2ff', '#313aa2ff', '#313aa2ff', '#313aa2ff', '#313aa2ff', '#313ba3ff', '#323ba3ff', '#323ba3ff', '#323ba3ff', '#323ca3ff', '#323ca3ff', '#323ca4ff', '#333ca4ff', '#333ca4ff', '#333da4ff', '#333da4ff', '#333da5ff', '#333da5ff', '#343ea5ff', '#343ea5ff', '#343ea5ff', '#343ea6ff', '#343ea6ff', '#343fa6ff', '#353fa6ff', '#353fa6ff', '#353fa6ff', '#3540a7ff', '#3540a7ff', '#3640a7ff', '#3640a7ff', '#3641a7ff', '#3641a8ff', '#3641a8ff', '#3641a8ff', '#3741a8ff', '#3742a8ff', '#3742a8ff', '#3742a9ff', '#3742a9ff', '#3743a9ff', '#3843a9ff', '#3843a9ff', '#3843aaff', '#3843aaff', '#3844aaff', '#3844aaff', '#3944aaff', '#3944abff', '#3945abff', '#3945abff', '#3945abff', '#3a45abff', '#3a45abff', '#3a46acff', '#3a46acff', '#3a46acff', '#3a46acff', '#3b47acff', '#3b47adff', '#3b47adff', '#3b47adff', '#3b47adff', '#3b48adff', '#3c48adff', '#3c48aeff', '#3c48aeff', '#3c49aeff', '#3c49aeff', '#3c49aeff', '#3d49afff', '#3d4aafff', '#3d4aafff', '#3d4aafff', '#3d4aafff', '#3d4ab0ff', '#3e4bb0ff', '#3e4bb0ff', '#3e4bb0ff', '#3e4bb0ff', '#3e4cb0ff', '#3f4cb1ff', '#3f4cb1ff', '#3f4cb1ff', '#3f4cb1ff', '#3f4db1ff', '#3f4db2ff', '#404db2ff', '#404db2ff', '#404eb2ff', '#404eb2ff', '#404eb2ff', '#404eb3ff', '#414eb3ff', '#414fb3ff', '#414fb3ff', '#414fb3ff', '#414fb4ff', '#4150b4ff', '#4250b4ff', '#4250b4ff', '#4250b4ff', '#4251b5ff', '#4251b5ff', '#4351b5ff', '#4351b5ff', '#4351b5ff', '#4352b5ff', '#4352b6ff', '#4352b6ff', '#4452b6ff', '#4453b6ff', '#4453b6ff', '#4453b7ff', '#4453b7ff', '#4453b7ff', '#4554b7ff', '#4554b7ff', '#4554b7ff', '#4554b8ff', '#4555b8ff', '#4555b8ff', '#4655b8ff', '#4655b8ff', '#4655b9ff', '#4656b9ff', '#4656b9ff', '#4656b9ff', '#4756b9ff', '#4757baff', '#4757baff', '#4757baff', '#4757baff', '#4857baff', '#4858baff', '#4858bbff', '#4858bbff', '#4858bbff', '#4859bbff', '#4959bbff', '#4959bcff', '#4959bcff', '#495abcff', '#495abcff', '#495abcff', '#4a5abcff', '#4a5abdff', '#4a5bbdff', '#4a5bbdff', '#4a5bbdff', '#4a5bbdff', '#4b5cbeff', '#4b5cbeff', '#4b5cbeff', '#4b5cbeff', '#4b5cbeff', '#4c5dbfff', '#4c5dbfff', '#4c5dbfff', '#4c5dbfff', '#4c5ebfff', '#4c5ebfff', '#4d5ec0ff', '#4d5ec0ff', '#4d5ec0ff', '#4d5fc0ff', '#4d5fc0ff', '#4d5fc1ff', '#4e5fc1ff', '#4e60c1ff', '#4e60c1ff', '#4e60c1ff', '#4e60c1ff', '#4e61c2ff', '#4f61c2ff', '#4f61c2ff', '#4f61c2ff', '#4f61c2ff', '#4f62c3ff', '#4f62c3ff', '#5062c3ff', '#5062c3ff', '#5063c3ff', '#5063c4ff', '#5063c4ff', '#5163c4ff', '#5163c4ff', '#5164c4ff', '#5164c4ff', '#5164c5ff', '#5164c5ff', '#5265c5ff', '#5265c5ff', '#f2a0a0ff', '#f29f9fff', '#f29f9fff', '#f29e9eff', '#f29d9eff', '#f29d9dff', '#f29c9dff', '#f29c9dff', '#f19b9cff', '#f19a9cff', '#f19a9bff', '#f1999bff', '#f1989aff', '#f1989aff', '#f19799ff', '#f19799ff', '#f19698ff', '#f09598ff', '#f09597ff', '#f09497ff', '#f09496ff', '#f09396ff', '#f09295ff', '#f09295ff', '#f09194ff', '#f09194ff', '#ef9093ff', '#ef8f93ff', '#ef8f92ff', '#ef8e92ff', '#ef8d91ff', '#ef8d91ff', '#ef8c90ff', '#ef8c90ff', '#ef8b8fff', '#ee8a8fff', '#ee8a8fff', '#ee898eff', '#ee898eff', '#ee888dff', '#ee878dff', '#ee878cff', '#ee868cff', '#ee868bff', '#ed858bff', '#ed848aff', '#ed848aff', '#ed8389ff', '#ed8289ff', '#ed8288ff', '#ed8188ff', '#ed8187ff', '#ed8087ff', '#ec7f86ff', '#ec7f86ff', '#ec7e85ff', '#ec7e85ff', '#ec7d84ff', '#ec7c84ff', '#ec7c83ff', '#ec7b83ff', '#ec7b82ff', '#eb7a82ff', '#eb7981ff', '#eb7981ff', '#eb7881ff', '#eb7780ff', '#eb7780ff', '#eb767fff', '#eb767fff', '#eb757eff', '#ea747eff', '#ea747dff', '#ea737dff', '#ea737cff', '#ea727cff', '#ea717bff', '#ea717bff', '#ea707aff', '#e9707aff', '#e96f79ff', '#e96e79ff', '#e96e78ff', '#e96d78ff', '#e96c77ff', '#e96c77ff', '#e96b76ff', '#e96b76ff', '#e86a75ff', '#e86975ff', '#e86974ff', '#e86874ff', '#e86873ff', '#e86773ff', '#e86673ff', '#e86672ff', '#e86572ff', '#e76571ff', '#e76471ff', '#e76370ff', '#e76370ff', '#e7626fff', '#e7616fff', '#e7616eff', '#e7606eff', '#e7606dff', '#e65f6dff', '#e65e6cff', '#e65e6cff', '#e65d6bff', '#e65d6bff', '#e65c6aff', '#e65b6aff', '#e65b69ff', '#e65a69ff', '#e55968ff', '#e55968ff', '#e55867ff', '#e55867ff', '#e55766ff', '#e55666ff', '#e55665ff', '#e55565ff', '#e55565ff', '#e45464ff', '#e45364ff', '#e45363ff', '#e45263ff', '#e45262ff', '#e45162ff', '#e45061ff', '#e45061ff', '#e44f60ff', '#e34e60ff', '#e34e5fff', '#e34d5fff', '#e34d5eff', '#e34c5eff', '#e34b5dff', '#e34b5dff', '#e34a5cff', '#e34a5cff', '#e2495bff', '#e2485bff', '#e2485aff', '#e2475aff', '#e24759ff', '#e24659ff', '#e24558ff', '#e24558ff', '#e14457ff', '#e14357ff', '#e14356ff', '#e14256ff', '#e14256ff', '#e14155ff', '#e14055ff', '#e14054ff', '#e13f54ff', '#e03f53ff', '#e03e53ff', '#e03d52ff', '#e03d52ff', '#e03c51ff', '#e03c51ff', '#e03b50ff', '#e03a50ff', '#e03a4fff', '#df394fff', '#df384eff', '#df384eff', '#df374dff', '#df374dff', '#df364cff', '#df354cff', '#df354bff', '#df344bff', '#de344aff', '#de334aff', '#de3249ff', '#de3249ff', '#de3148ff', '#de3148ff', '#de3048ff', '#de2f47ff', '#de2f47ff', '#dd2e46ff', '#dd2d46ff', '#dd2d45ff', '#dd2c45ff', '#dd2c44ff', '#dd2b44ff', '#dd2a43ff', '#dd2a43ff', '#dd2942ff', '#dc2942ff', '#dc2841ff', '#dc2741ff', '#dc2740ff', '#dc2640ff', '#dc263fff', '#dc253fff', '#dc243eff', '#dc243eff', '#db233dff', '#db223dff', '#db223cff', '#db213cff', '#db213bff', '#db203bff', '#db1f3aff', '#db1f3aff', '#db1e3aff', '#da1e39ff', '#da1d39ff', '#da1c38ff', '#da1c38ff', '#da1b37ff', '#da1a37ff', '#da1a36ff', '#da1936ff', '#d91935ff', '#d91835ff', '#d91734ff', '#d91734ff', '#d91633ff', '#d91633ff', '#d91532ff', '#d91432ff', '#d91431ff', '#d81331ff', '#d81330ff', '#d81230ff', '#d8112fff', '#d8112fff', '#d8102eff', '#d80f2eff', '#d80f2dff', '#d80e2dff', '#d70e2cff', '#d70d2cff', '#d70c2cff', '#d70c2bff', '#d70b2bff', '#d70b2aff', '#d70a2aff', '#d70929ff', '#d70929ff', '#d60828ff', '#d60828ff']);
+    
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.x = d3.scale.linear()
+              .domain([-100.0, 100.0])
+              .range([0, 450 - 50]);
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.legend = L.control({position: 'topright'});
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.legend.addTo(map_231c2ee3737c5718d3c2e920a54246e2);
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.xAxis = d3.svg.axis()
+        .scale(color_map_9bb6cf1f677db8a79842f5d6cd52578a.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([-100.0, -0.01, 0.01, 100.0]);
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.g = color_map_9bb6cf1f677db8a79842f5d6cd52578a.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.g.selectAll("rect")
+        .data(color_map_9bb6cf1f677db8a79842f5d6cd52578a.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_9bb6cf1f677db8a79842f5d6cd52578a.x(color_map_9bb6cf1f677db8a79842f5d6cd52578a.color.domain()[i - 1]) : color_map_9bb6cf1f677db8a79842f5d6cd52578a.x.range()[0],
+            x1: i < color_map_9bb6cf1f677db8a79842f5d6cd52578a.color.domain().length ? color_map_9bb6cf1f677db8a79842f5d6cd52578a.x(color_map_9bb6cf1f677db8a79842f5d6cd52578a.color.domain()[i]) : color_map_9bb6cf1f677db8a79842f5d6cd52578a.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_9bb6cf1f677db8a79842f5d6cd52578a.g.call(color_map_9bb6cf1f677db8a79842f5d6cd52578a.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Diferen\u00e7a percentual - LUIZ IN\u00c1CIO LULA DA SILVA (+) / FLAVIO NANTES BOLSONARO (-)");
+    
+            var tile_layer_aa424470b6a99b4f9febd7b4ef9f6ce9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_a5e6fadfdd57daf51cfe45f0e58c2946 = new L.Control.MiniMap(
+                tile_layer_aa424470b6a99b4f9febd7b4ef9f6ce9,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_231c2ee3737c5718d3c2e920a54246e2.addControl(mini_map_a5e6fadfdd57daf51cfe45f0e58c2946);
+        
+</script>
+</html>

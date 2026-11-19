@@ -12,7 +12,10 @@ __pycache__/
 
 amostra.csv/
 amostra/
-*.csv
+input/
+data/
+titanic.csv
+dados_investimento_e_vagas_ifes.csv
 *.bz2
 *.txt
 

@@ -16,8 +16,11 @@ st.subheader("Ouro Branco - MG")
 def load_data():
     """"Função utilizada para carregar os dados da votação dos dois turnos."""
 
-    votes_1t = pd.read_csv("votos_1t.csv")
-    votes_2t = pd.read_csv("votos_2t.csv")
+    path_votes_1t = BASE_DIR / "votos_1t.csv"
+    path_votes_2t = BASE_DIR / "votos_2t.csv"
+
+    votes_1t = pd.read_csv(path_votes_1t)
+    votes_2t = pd.read_csv(path_votes_2t)
 
     return votes_1t, votes_2t
 
